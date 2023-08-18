@@ -1,9 +1,19 @@
-<h1>
-Hello and Welcome
-</h1>
- <%= link_to 'create a list', new_list_path %>
-<% @lists.each do |list|%>
-  <%= list.name %>
-  <%= link_to 'go to list', list_path(list)%>
+<div class="container">
+  <h1>
+  Hello and Welcome
+  </h1>
+  <%= link_to 'create a list', new_list_path %>
 
-<% end %>
+  <div class="grid-lists">
+    <% @lists.each do |list|%>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= list.name %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <%= link_to 'go to list', list_path(list), class: "btn btn-primary" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
