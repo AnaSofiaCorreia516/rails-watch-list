@@ -1,0 +1,8 @@
+<h1>
+Hello and Welcome
+</h1>
+
+<% @lists.each do |list|%>
+  <%= list.name %>
+  <%= link_to 'go to list', list_path(list) %>
+<% end %>
